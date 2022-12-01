@@ -1,0 +1,19 @@
+{
+    "meats": [
+        {
+            "id": 1,
+            "name": "beef",
+            "animalName": "cow"
+        },
+        {
+            "id": 2,
+            "name": "pork",
+            "animalName": "pig"
+        },
+        {
+            "id": 3,
+            "name": "lamb",
+            "animalName": "sheep"
+        }
+    ]
+}
