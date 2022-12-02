@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import { HomePage } from './components/Home.page'
 import { AnimalMeetsPage } from './components/AnimalMeets.page';
-import { MeetsPage } from './components/Meets.page';
+import { MeatsPage } from './components/Meats.page';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
 
       </div>
       <Routes>
-        <Route path='/meets' element={<MeetsPage />} />
+        <Route path='/meets' element={<MeatsPage />} />
         <Route path='/animal-meets' element={<AnimalMeetsPage />} />
         <Route path='/home' element={<HomePage />} />
       </Routes>
