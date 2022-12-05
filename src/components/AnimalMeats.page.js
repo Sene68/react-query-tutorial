@@ -6,10 +6,14 @@ const fetchMeats = () => {
 }
 
 export const AnimalMeatsPage = () => {
-    const { isLoading, data } = useQuery('meats', fetchMeats)
+    const { isLoading, data, isError, error } = useQuery('meats', fetchMeats)
 
     if (isLoading) {
         return <h2>Loading...</h2>
+    }
+
+    if (isError) {
+        return <h2>{error.message}</h2>
     }
 
     return (
