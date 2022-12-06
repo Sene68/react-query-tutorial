@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import './App.css';
 import { HomePage } from './components/Home.page'
 import { AnimalMeatsPage } from './components/AnimalMeats.page';
@@ -15,7 +16,7 @@ function App() {
           <nav>
             <ul>
               <li>
-                <Link to='/home'>Home</Link>
+                <Link to='/'>Home</Link>
               </li>
               <li>
                 <Link to='/meats'>Meats</Link>
@@ -29,9 +30,10 @@ function App() {
         <Routes>
           <Route path='/meats' element={<MeatsPage />} />
           <Route path='/animal-meats' element={<AnimalMeatsPage />} />
-          <Route path='/home' element={<HomePage />} />
+          <Route path='/' element={<HomePage />} />
         </Routes>
       </Router>
+      <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
     </QueryClientProvider>
     
   );
