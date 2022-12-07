@@ -6,7 +6,13 @@ const fetchMeats = () => {
 }
 
 export const AnimalMeatsPage = () => {
-    const { isLoading, data, isError, error } = useQuery('meats', fetchMeats)
+    const { isLoading, data, isError, error } = useQuery(
+        'meats', 
+        fetchMeats,
+        {
+            cacheTime: 5000,
+        }
+    )
 
     if (isLoading) {
         return <h2>Loading...</h2>
