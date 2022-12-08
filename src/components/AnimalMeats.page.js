@@ -10,7 +10,7 @@ export const AnimalMeatsPage = () => {
         'meats', 
         fetchMeats,
         {
-            cacheTime: 5000,
+            staleTime: 5000,
         }
     )
 
