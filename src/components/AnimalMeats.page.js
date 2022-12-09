@@ -10,7 +10,8 @@ export const AnimalMeatsPage = () => {
         'meats', 
         fetchMeats,
         {
-            staleTime: 5000,
+            refetchOnMount: true,
+            refetchOnWindowFocus: 'always',
         }
     )
 
