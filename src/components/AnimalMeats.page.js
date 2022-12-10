@@ -10,8 +10,8 @@ export const AnimalMeatsPage = () => {
         'meats', 
         fetchMeats,
         {
-            refetchOnMount: true,
-            refetchOnWindowFocus: 'always',
+            refetchInterval: 2000,
+            refetchIntervalInBackground: true,
         }
     )
 
