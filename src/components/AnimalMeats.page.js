@@ -21,6 +21,10 @@ export const AnimalMeatsPage = () => {
         {
             onSuccess,
             onError,
+            select: (data) => {
+                const animalName = data.data.map(animal => animal.animalName)
+                return animalName
+            }
         }
     )
 
@@ -36,9 +40,11 @@ export const AnimalMeatsPage = () => {
         <>
             <h2>Animal Meats Page</h2>
             <button onClick={refetch}>Fetch Animals</button>
-            {data?.data.map((meat) => {
-                return <div key={meat.animalName}>{meat.animalName}</div> 
-            })}
+            {
+                data.map(animalName => {
+                    return <div key={animalName}>{animalName}</div>
+                })
+            }
         </>
     );
 }
