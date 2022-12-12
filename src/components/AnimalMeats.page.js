@@ -6,11 +6,21 @@ const fetchMeats = () => {
 }
 
 export const AnimalMeatsPage = () => {
+
+    const onSuccess = (data) => {
+        console.log('Perform side effect after data fetching', data)
+    }
+
+    const onError = (error) => {
+        console.log('Perform side effect after encounting error', error)
+    }
+
     const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
         'meats', 
         fetchMeats,
         {
-            enabled: false,
+            onSuccess,
+            onError,
         }
     )
 
