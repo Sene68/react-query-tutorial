@@ -1,12 +1,6 @@
-import { useQuery } from "react-query"
-import axios from "axios"
-
-const fetchMeats = () => {
-    return axios.get('http://localhost:4000/meats')
-}
+import { useAnimalData } from "../hooks/useAnimalData"
 
 export const AnimalMeatsPage = () => {
-
     const onSuccess = (data) => {
         console.log('Perform side effect after data fetching', data)
     }
@@ -15,18 +9,7 @@ export const AnimalMeatsPage = () => {
         console.log('Perform side effect after encounting error', error)
     }
 
-    const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
-        'meats', 
-        fetchMeats,
-        {
-            onSuccess,
-            onError,
-            select: (data) => {
-                const animalName = data.data.map(animal => animal.animalName)
-                return animalName
-            }
-        }
-    )
+    const { isLoading, data, isError, error, isFetching, refetch } = useAnimalData(onSuccess, onError)
 
     if (isLoading || isFetching) {
         return <h2>Loading...</h2>
