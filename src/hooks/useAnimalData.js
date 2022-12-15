@@ -12,10 +12,6 @@ export const useAnimalData = (onSuccess, onError) => {
         {
             onSuccess,
             onError,
-            select: (data) => {
-                const animalName = data.data.map(animal => animal.animalName)
-                return animalName
-            }
         }
     )
 }

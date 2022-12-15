@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useAnimalData } from "../hooks/useAnimalData"
 
 export const AnimalMeatsPage = () => {
@@ -24,10 +25,17 @@ export const AnimalMeatsPage = () => {
             <h2>Animal Meats Page</h2>
             <button onClick={refetch}>Fetch Animals</button>
             {
+                data?.data.map((animal) => {
+                    return <div key={animal.id}>
+                        <Link to={`/animal-meats/${animal.id}`}>{animal.animalName}</Link>
+                        </div>
+                })
+            }
+            {/* {
                 data.map(animalName => {
                     return <div key={animalName}>{animalName}</div>
                 })
-            }
-        </>
+            }*/}
+        </> 
     );
 }

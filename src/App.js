@@ -5,6 +5,7 @@ import './App.css';
 import { HomePage } from './components/Home.page'
 import { AnimalMeatsPage } from './components/AnimalMeats.page';
 import { MeatsPage } from './components/Meats.page';
+import { AnimalMeat } from './components/AnimalMeat.page';
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function App() {
         </div>
         <Routes>
           <Route path='/meats' element={<MeatsPage />} />
+          <Route path='/animal-meats/:animalId' element={<AnimalMeat />} />
           <Route path='/animal-meats' element={<AnimalMeatsPage />} />
           <Route path='/' element={<HomePage />} />
         </Routes>
