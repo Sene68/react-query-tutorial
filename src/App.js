@@ -6,6 +6,7 @@ import { HomePage } from './components/Home.page'
 import { AnimalMeatsPage } from './components/AnimalMeats.page';
 import { MeatsPage } from './components/Meats.page';
 import { AnimalMeat } from './components/AnimalMeat.page';
+import { ParallelQueriesPage } from './components/ParallelQueries.page';
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function App() {
           </nav>
         </div>
         <Routes>
+          <Route path='/rq-parallel' element={<ParallelQueriesPage />} />
           <Route path='/meats' element={<MeatsPage />} />
           <Route path='/animal-meats/:animalId' element={<AnimalMeat />} />
           <Route path='/animal-meats' element={<AnimalMeatsPage />} />

@@ -15,5 +15,19 @@
             "name": "lamb",
             "animalName": "sheep"
         }
+    ],
+    "owner": [
+        {
+            "id": 1,
+            "name": "Dario Cecchini"
+        },
+        {
+            "id": 2,
+            "name": "Dave Lang"
+        },
+        {
+            "id": 3,
+            "name": "Sarah Kelly"
+        }
     ]
 }
