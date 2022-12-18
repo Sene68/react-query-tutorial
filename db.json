@@ -29,5 +29,17 @@
             "id": 3,
             "name": "Sarah Kelly"
         }
+    ],
+    "users": [
+        {
+            "id": "senefull68@gmail.com",
+            "channelId": "sene68"
+        }
+    ],
+    "channels": [
+        {
+            "id": "sene68",
+            "courses": ["react", "vue", "angular"]
+        }
     ]
 }

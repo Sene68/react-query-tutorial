@@ -8,6 +8,7 @@ import { MeatsPage } from './components/Meats.page';
 import { AnimalMeat } from './components/AnimalMeat.page';
 import { ParallelQueriesPage } from './components/ParallelQueries.page';
 import { DynamicParallelQueriesPage } from './components/DynamicParallelQueries.page';
+import { DependentQueriesPage } from './components/DependentQueries.page';
 
 const queryClient = new QueryClient();
 
@@ -31,7 +32,8 @@ function App() {
           </nav>
         </div>
         <Routes>
-        <Route path='/rq-dynamic-parallel' element={<DynamicParallelQueriesPage animalIds={[1, 3]} />} />
+          <Route path='/rq-dependent' element={<DependentQueriesPage email={'senefull68@gmail.com'} />} />
+          <Route path='/rq-dynamic-parallel' element={<DynamicParallelQueriesPage animalIds={[1, 3]} />} />
           <Route path='/rq-parallel' element={<ParallelQueriesPage />} />
           <Route path='/meats' element={<MeatsPage />} />
           <Route path='/animal-meats/:animalId' element={<AnimalMeat />} />
