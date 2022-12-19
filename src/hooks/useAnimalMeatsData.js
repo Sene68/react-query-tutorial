@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 import axios from "axios";
 
 const fetchAnimalMeat = ({ queryKey }) => {
@@ -7,5 +7,18 @@ const fetchAnimalMeat = ({ queryKey }) => {
 }
 
 export const useAnimalMeatsData = (animalId) => {
-    return useQuery(['animal-meats', animalId], fetchAnimalMeat)
+    const queryClient = useQueryClient()
+    return useQuery(['animal-meats', animalId], fetchAnimalMeat, {
+        initialData: () => {
+            const animal = queryClient.getQueryData('animal-meats')?.data?.find((animal) => animal.id === parseInt(animalId))
+
+            if (animal) {
+                return {
+                    data: animal
+                }
+            } else {
+                return undefined
+            }
+        }
+    })
 }
