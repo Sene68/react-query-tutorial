@@ -1,79 +1,93 @@
 {
-    "meats": [
-        {
-            "id": 1,
-            "name": "beef",
-            "animalName": "cow"
-        },
-        {
-            "id": 2,
-            "name": "pork",
-            "animalName": "pig"
-        },
-        {
-            "id": 3,
-            "name": "lamb",
-            "animalName": "sheep"
-        }
-    ],
-    "owner": [
-        {
-            "id": 1,
-            "name": "Dario Cecchini"
-        },
-        {
-            "id": 2,
-            "name": "Dave Lang"
-        },
-        {
-            "id": 3,
-            "name": "Sarah Kelly"
-        }
-    ],
-    "users": [
-        {
-            "id": "senefull68@gmail.com",
-            "channelId": "sene68"
-        }
-    ],
-    "channels": [
-        {
-            "id": "sene68",
-            "courses": ["react", "vue", "angular"]
-        }
-    ],
-    "colors": [
-        {
-            "id": 1,
-            "label" : "red"
-        },
-        {
-            "id": 2,
-            "label" : "blue"
-        },
-        {
-            "id": 3,
-            "label" : "green"
-        },
-        {
-            "id": 4,
-            "label" : "yellow"
-        },
-        {
-            "id": 5,
-            "label" : "black"
-        },
-        {
-            "id": 6,
-            "label" : "white"
-        },
-        {
-            "id": 7,
-            "label" : "orange"
-        },
-        {
-            "id": 8,
-            "label" : "purple"
-        }
-    ]
+  "meats": [
+    {
+      "id": 1,
+      "name": "beef",
+      "animalName": "cow"
+    },
+    {
+      "id": 2,
+      "name": "pork",
+      "animalName": "pig"
+    },
+    {
+      "id": 3,
+      "name": "lamb",
+      "animalName": "sheep"
+    },
+    {
+      "name": "qwdqwd",
+      "animalName": "asdasww",
+      "id": 4
+    },
+    {
+      "name": "qwdqwd",
+      "animalName": "asdasww",
+      "id": 5
+    }
+  ],
+  "owner": [
+    {
+      "id": 1,
+      "name": "Dario Cecchini"
+    },
+    {
+      "id": 2,
+      "name": "Dave Lang"
+    },
+    {
+      "id": 3,
+      "name": "Sarah Kelly"
+    }
+  ],
+  "users": [
+    {
+      "id": "senefull68@gmail.com",
+      "channelId": "sene68"
+    }
+  ],
+  "channels": [
+    {
+      "id": "sene68",
+      "courses": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "red"
+    },
+    {
+      "id": 2,
+      "label": "blue"
+    },
+    {
+      "id": 3,
+      "label": "green"
+    },
+    {
+      "id": 4,
+      "label": "yellow"
+    },
+    {
+      "id": 5,
+      "label": "black"
+    },
+    {
+      "id": 6,
+      "label": "white"
+    },
+    {
+      "id": 7,
+      "label": "orange"
+    },
+    {
+      "id": 8,
+      "label": "purple"
+    }
+  ]
 }

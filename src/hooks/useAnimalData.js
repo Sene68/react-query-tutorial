@@ -1,8 +1,12 @@
-import { useQuery } from "react-query"
+import { useQuery, useMutation } from "react-query"
 import axios from "axios"
 
 const fetchMeats = () => {
     return axios.get('http://localhost:4000/meats')
+}
+
+const addAnimal = (animal) => {
+    return axios.post('http://localhost:4000/meats', animal)
 }
 
 export const useAnimalData = (onSuccess, onError) => {
@@ -14,4 +18,8 @@ export const useAnimalData = (onSuccess, onError) => {
             onError,
         }
     )
+}
+
+export const useAddAnimalData = () => {
+    return useMutation(addAnimal)
 }

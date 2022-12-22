@@ -1,7 +1,11 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import { useAnimalData } from "../hooks/useAnimalData"
+import { useAddAnimalData, useAnimalData } from "../hooks/useAnimalData"
 
 export const AnimalMeatsPage = () => {
+    const [name, setName] = useState('')
+    const [animalName, setAnimalName] = useState('')
+
     const onSuccess = (data) => {
         console.log('Perform side effect after data fetching', data)
     }
@@ -11,6 +15,14 @@ export const AnimalMeatsPage = () => {
     }
 
     const { isLoading, data, isError, error, isFetching, refetch } = useAnimalData(onSuccess, onError)
+
+    const { mutate: addAnimal } = useAddAnimalData()
+
+    const handleAddAnimalClick = () => {
+        console.log({ name, animalName })
+        const animal = { name, animalName }
+        addAnimal(animal)
+    }
 
     if (isLoading || isFetching) {
         return <h2>Loading...</h2>
@@ -23,6 +35,11 @@ export const AnimalMeatsPage = () => {
     return (
         <>
             <h2>Animal Meats Page</h2>
+            <div>
+                <input type='text' value={name} onChange={(e) => setName(e.target.value)} />
+                <input type='text' value={animalName} onChange={(e) => setAnimalName(e.target.value)} />
+                <button onClick={handleAddAnimalClick}>Add Animal</button>
+            </div>
             <button onClick={refetch}>Fetch Animals</button>
             {
                 data?.data.map((animal) => {
