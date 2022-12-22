@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from "react-query"
+import { useQuery, useMutation, useQueryClient } from "react-query"
 import axios from "axios"
 
 const fetchMeats = () => {
@@ -21,5 +21,10 @@ export const useAnimalData = (onSuccess, onError) => {
 }
 
 export const useAddAnimalData = () => {
-    return useMutation(addAnimal)
+    const queryClient = useQueryClient()
+    return useMutation(addAnimal, {
+        onSuccess: () => {
+            queryClient.invalidateQueries('meats')
+        }
+    })
 }
