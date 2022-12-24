@@ -23,8 +23,14 @@ export const useAnimalData = (onSuccess, onError) => {
 export const useAddAnimalData = () => {
     const queryClient = useQueryClient()
     return useMutation(addAnimal, {
-        onSuccess: () => {
-            queryClient.invalidateQueries('meats')
+        onSuccess: (data) => {
+            queryClient.setQueryData('meats', (oldQueryData) => {
+                return {
+                    ...oldQueryData,
+                    data: [...oldQueryData.data, data.data],
+                }
+            })
+            //queryClient.invalidateQueries('meats')
         }
     })
 }

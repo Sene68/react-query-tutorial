@@ -29,6 +29,11 @@
       "name": "chicken",
       "animalName": "chicken",
       "id": 6
+    },
+    {
+      "name": "fish",
+      "animalName": "fishman",
+      "id": 7
     }
   ],
   "owner": [
