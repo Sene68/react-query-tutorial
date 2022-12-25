@@ -14,7 +14,7 @@ export const AnimalMeatsPage = () => {
         console.log('Perform side effect after encounting error', error)
     }
 
-    const { isLoading, data, isError, error, isFetching, refetch } = useAnimalData(onSuccess, onError)
+    const { isLoading, data, isError, error, refetch } = useAnimalData(onSuccess, onError)
 
     const { mutate: addAnimal } = useAddAnimalData()
 
@@ -24,7 +24,7 @@ export const AnimalMeatsPage = () => {
         addAnimal(animal)
     }
 
-    if (isLoading || isFetching) {
+    if (isLoading) {
         return <h2>Loading...</h2>
     }
 

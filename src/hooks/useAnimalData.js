@@ -23,14 +23,24 @@ export const useAnimalData = (onSuccess, onError) => {
 export const useAddAnimalData = () => {
     const queryClient = useQueryClient()
     return useMutation(addAnimal, {
-        onSuccess: (data) => {
+        onMutate: async (newAnimal) => {
+            await queryClient.cancelQueries('meats')
+            const previousAnimalData = queryClient.getQueryData('meats')
             queryClient.setQueryData('meats', (oldQueryData) => {
                 return {
                     ...oldQueryData,
-                    data: [...oldQueryData.data, data.data],
+                    data: [...oldQueryData.data, { id: oldQueryData?.data?.length + 1, ...newAnimal}],
                 }
             })
-            //queryClient.invalidateQueries('meats')
+            return {
+                previousAnimalData,
+            }
+        },
+        onError: (_error, _animal, context) => {
+            queryClient.setQueryData('meats', context.previousAnimalData)
+        },
+        onSettled: () => {
+            queryClient.invalidateQueries('meats')
         }
     })
 }
