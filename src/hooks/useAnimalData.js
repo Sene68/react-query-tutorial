@@ -1,12 +1,14 @@
 import { useQuery, useMutation, useQueryClient } from "react-query"
-import axios from "axios"
+import { request } from "../utils/axios-utils"
 
 const fetchMeats = () => {
-    return axios.get('http://localhost:4000/meats')
+    // return axios.get('http://localhost:4000/meats')
+    return request({ url: '/meats' })
 }
 
 const addAnimal = (animal) => {
-    return axios.post('http://localhost:4000/meats', animal)
+    // return axios.post('http://localhost:4000/meats', animal)
+    return request({ url: '/meats', method: 'post', data: animal })
 }
 
 export const useAnimalData = (onSuccess, onError) => {
